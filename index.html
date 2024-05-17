@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>MYafizham</title>
+
+		<link rel="stylesheet" type="text/css" href="styles.css" />
+		<link
+			href="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.3.0/css/flat-ui.min.css"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<header id="welcome-section" class="title flex">
+			<h1 class="title">M Yafizham's Resume</h1>
+			<div class="flex">
+				<a href="" class="">
+					<i class="fui-github small">github</i>
+				</a>
+				<a href="">
+					<i class="fui-linkedin small"> linkedIn</i>
+				</a>
+				<a href="">
+					<i class="fui-facebook small"> facebook </i>
+				</a>
+				<a href="">
+					<i class="fui-youtube small">Youtube </i>
+				</a>
+			</div>
+		</header>
+		<div class="flex">
+			<div class="menu">
+				<div class="menu-sub">
+					<button class="menu-button">Projects</button>
+					<button class="menu-button">Personal</button>
+				</div>
+			</div>
+
+			<content class="project">
+				<p class="dashed paddingx rounded">
+					I have learn a lot of things in web development.
+				</p>
+				<div class="skills flex scroll">
+					<!-- render skills -->
+				</div>
+				<div class="project-tile">
+					<div class="project">
+						<div class="infos flex col">
+							<h1 class="project-title">Ingredients Browser App</h1>
+							<div class="title">
+								<span class="tech dashed">React</span>
+								<span class="tech dashed">vite</span>
+								<span class="tech dashed">javascript</span>
+								<span class="tech dashed">tailwind</span>
+								<span class="tech dashed">jsx</span>
+							</div>
+						</div>
+						<a
+							href="https://ingredientsbrowser.vercel.app/"
+							target="_blank"
+							class="image"
+						>
+							<img
+								src="https://ucarecdn.com/fd070022-8a5a-4518-a532-cbc4181886d2/ssfoodingredients.jpeg"
+								class="w-screen rounded"
+							/>
+							<div class="bold absolute flex gap">
+								<p class="paddingx bigger bg-slate gap">
+									<i class="fui-eye paddingx"></i>
+									<i
+										class="fui-github paddingx"
+										onclick="window.open('https://github.com/ham144')"
+									></i>
+								</p>
+							</div>
+						</a>
+					</div>
+				</div>
+			</content>
+		</div>
+	</body>
+
+	<script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+	<script>
+		var title = document.getElementById(".title");
+
+		var typewriter = new Typewriter(app, {
+			loop: true,
+			delay: 75,
+		});
+
+		typewriter
+			.pauseFor(2500)
+			.typeString("A simple yet powerful native javascript")
+			.pauseFor(300)
+			.deleteChars(10)
+			.typeString(
+				"<strong>JS</strong> plugin for a cool typewriter effect and "
+			)
+			.typeString(
+				'<strong>only <span style="color: #27ae60;">5kb</span> Gzipped!</strong>'
+			)
+			.pauseFor(1000)
+			.start();
+	</script>
+
+	<script>
+		const skillsClass = document.querySelector(".skills");
+
+		const skillBar = document.querySelector(".skills");
+		const skills = [
+			{ React: 3 },
+			{ mongoose: 3 },
+			{ vite: 3 },
+			{ Nextjs: 3 },
+			{ Redux: 2 },
+			{ mongodb: 3 },
+			{ AWS: 1 },
+			{ Docker: 1 },
+			{ "React-quary": 2 },
+			{ JAVA: 2 },
+			{ Typescript: 2 },
+			{ Expressjs: 1 },
+			{ nextauth: 2 },
+			{ css: 3 },
+			{ tailwind: 3 },
+			{ PostgreSql: 2 },
+			{ html: 3 },
+			{ javascript: 3 },
+			{ git: 3 },
+			{ vscode: 3 },
+			{ bootsrap: 1 },
+			{ jsx: 3 },
+			{ "npm/yarn": 1 },
+			{ "CRUD API": 3 },
+			{ bun: 1 },
+			{ vercel: 3 },
+			{ figma: 2 },
+			{ "microsoft Excel": 2 },
+			{ Flutter: 1 },
+			{ Dart: 1 },
+			{ Photoshop: 2 },
+		];
+
+		//personal
+		const languages = ["Indonesian", "English A1", "Japanese"];
+
+		const projects = [
+			{
+				title: "Ingredients Browser App",
+				image:
+					"https://ucarecdn.com/fd070022-8a5a-4518-a532-cbc4181886d2/ssfoodingredients.jpeg",
+				urlVisit: "https://ingredientsbrowser.vercel.app/",
+				tech: ["react", "vite", "javascript", "tailwind", "jsx"],
+				urlRepo: "",
+			},
+		];
+
+		function createSkills() {
+			const star = `<i class="fui-star small"></i>`;
+
+			skills.forEach((skill) => {
+				skillsClass.innerHTML += `
+		  <div class="height20">
+		    <div class="flex">
+                ${star.repeat(Object.values(skill)[0])}
+		    </div>
+		    <p class="col">${Object.keys(skill)[0]}</p>
+		  </div>
+		`;
+			});
+		}
+
+		createSkills();
+	</script>
+</html>
