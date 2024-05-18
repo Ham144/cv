@@ -183,3 +183,70 @@ i:hover {
 .gap {
 	gap: 30px;
 }
+.onActive {
+	border-color: rgb(39, 73, 135);
+	border-width: 7px;
+}
+.transition {
+	transition: all linear 2000s;
+}
+
+@media screen and (max-width: 500px) {
+	body {
+		overflow-x: visible;
+	}
+	h1.title {
+		font-size: x-large;
+	}
+	i.fui-facebook.small,
+	i.fui-youtube.small,
+	i.fui-github.small,
+	i.fui-linkedin.small {
+		display: flex;
+		width: 100px;
+		justify-content: center;
+	}
+	i p {
+		display: none;
+	}
+
+	content.project {
+	}
+	header {
+		display: flex;
+		flex-direction: column-reverse;
+	}
+	h1.project-title {
+		font-size: medium;
+	}
+	div.skills.flex.scroll {
+		display: flex;
+		width: 400px;
+	}
+	div.project {
+		height: 100vh;
+	}
+	span.tech.dashed {
+		font-size: small;
+		padding: 2px 8px;
+	}
+	img.w-screen.rounded {
+		width: 90%;
+	}
+	.paddingx.bigger.bg-slate.gap {
+		background-color: transparent;
+	}
+
+	::-webkit-scrollbar {
+		width: 30px;
+		height: 4px;
+	}
+
+	.menu {
+		display: flex;
+		position: absolute;
+	}
+	button.menu-button {
+		display: none;
+	}
+}

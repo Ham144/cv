@@ -16,26 +16,38 @@
 			<h1 class="title">M Yafizham's Resume</h1>
 			<div class="flex">
 				<a href="" class="">
-					<i class="fui-github small">github</i>
+					<i class="fui-github small">
+						<p>github</p>
+					</i>
 				</a>
 				<a href="">
-					<i class="fui-linkedin small"> linkedIn</i>
+					<i class="fui-linkedin small"> <p>linkedIn</p></i>
 				</a>
 				<a href="">
-					<i class="fui-facebook small"> facebook </i>
+					<i class="fui-facebook small"> <p>facebook</p> </i>
 				</a>
 				<a href="">
-					<i class="fui-youtube small">Youtube </i>
+					<i class="fui-youtube small"> <p>Youtube</p> </i>
 				</a>
 			</div>
 		</header>
 		<div class="flex">
 			<div class="menu">
-				<div class="menu-sub">
-					<button class="menu-button">Projects</button>
-					<button class="menu-button">Personal</button>
+				<div class="menu-sub transition">
+					<button
+						class="menu-button projectbtn onActive"
+						onclick="projectActive()"
+					>
+						Projects
+					</button>
+					<button class="menu-button personalbtn" onclick="personalActive()">
+						Personal
+					</button>
 				</div>
 			</div>
+
+			<!-- root or target -->
+			<div id="root"></div>
 
 			<content class="project">
 				<p class="dashed paddingx rounded">
@@ -83,7 +95,10 @@
 
 	<script>
 		const skillsClass = document.querySelector(".skills");
-
+		const root = document.querySelector("#root");
+		const personalbtn = document.querySelector(".personalbtn");
+		const projectbtn = document.querySelector(".projectbtn");
+		let ispersonal = false;
 		const skillBar = document.querySelector(".skills");
 		const skills = [
 			{ React: 3 },
@@ -140,12 +155,26 @@
 				skillsClass.innerHTML += `
 		  <div class="height20">
 		    <div class="flex">
-                ${star.repeat(Object.values(skill)[0])}
+		              ${star.repeat(Object.values(skill)[0])}
 		    </div>
 		    <p class="col">${Object.keys(skill)[0]}</p>
 		  </div>
 		`;
 			});
+		}
+
+		function personalActive() {
+			personalbtn.classList.add("onActive");
+			// show personal
+
+			projectbtn.classList.remove("onActive");
+		}
+
+		function projectActive() {
+			projectbtn.classList.add("onActive");
+			//show project
+
+			personalbtn.classList.remove("onActive");
 		}
 
 		createSkills();
