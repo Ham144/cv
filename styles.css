@@ -15,9 +15,15 @@ body {
 	font-size: 2rem;
 }
 #welcome-section {
-	width: 88%;
-	margin: auto;
+	display: none;
+	justify-content: space-between;
 }
+.wrapper {
+	display: flex;
+	justify-content: space-between;
+	width: 90%;
+}
+
 .rounded {
 	border-radius: 40px;
 	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -93,15 +99,15 @@ a:hover {
 	transform: scale(1.1);
 	animation-duration: 90000ms;
 }
-i {
-	font-weight: 700;
-	display: flex;
-	gap: 4px;
-	padding: 4px;
-}
+
 i:hover {
 	color: black;
 }
+a i {
+	flex-direction: column;
+	text-align: center;
+}
+
 .col {
 	display: flex;
 	flex-direction: column;
@@ -136,12 +142,12 @@ i:hover {
 }
 
 ::-webkit-scrollbar-thumb {
-	background: #f38280;
-	border-radius: 10px;
+	background: #aa08f5;
+	border-radius: none;
 }
 ::-webkit-scrollbar-track {
 	box-shadow: inset 0 0 5px grey;
-	border-radius: 10px;
+	border-radius: none;
 }
 .menu {
 	display: flex;
@@ -159,12 +165,16 @@ i:hover {
 }
 .menu-button {
 	border-radius: 23px;
-	background-color: #f38280;
+	background-color: #b511de;
+
 	outline: 4px solid #9b3a3a;
 	height: 100%;
 	color: black;
 	font-weight: 700;
 	cursor: pointer;
+}
+.menuhide {
+	display: none;
 }
 
 .skills {
@@ -191,6 +201,20 @@ i:hover {
 	transition: all linear 2000s;
 }
 
+/* default is darkmode, add this class to each  item darkmodable */
+.light-mode {
+	color: black;
+	color-scheme: inherit;
+	background: linear-gradient(
+		190deg,
+		rgb(199, 45, 245) 30%,
+		rgb(218, 137, 255),
+		rgb(255, 255, 255)
+	);
+	color: whitesmoke;
+}
+
+/* these for Mobile */
 @media screen and (max-width: 500px) {
 	body {
 		overflow-x: visible;
@@ -210,8 +234,6 @@ i:hover {
 		display: none;
 	}
 
-	content.project {
-	}
 	header {
 		display: flex;
 		flex-direction: column-reverse;
@@ -222,9 +244,6 @@ i:hover {
 	div.skills.flex.scroll {
 		display: flex;
 		width: 400px;
-	}
-	div.project {
-		height: 100vh;
 	}
 	span.tech.dashed {
 		font-size: small;
@@ -244,9 +263,50 @@ i:hover {
 
 	.menu {
 		display: flex;
-		position: absolute;
+		position: fixed;
 	}
-	button.menu-button {
+	.menu-sub {
 		display: none;
+		right: 9%;
+	}
+	.menu-button {
+		height: 90px;
+	}
+	.menuhide {
+		display: block;
+		position: fixed;
+		right: 12%;
+		bottom: 8%;
+		border-radius: 50px;
+		padding: 13px;
+		border: 2px dashed;
+		background: linear-gradient(23deg, rgb(82, 16, 82), rgb(49, 63, 100));
+		cursor: pointer;
+	}
+	.menuhide:hover {
+		transform: scale(1.2);
+	}
+	.menuhide:active {
+		transform: scale(1.2);
+	}
+	.burger {
+		width: 30px;
+		height: 6px;
+		margin-top: 5px;
+		margin-right: auto;
+		background-color: rgb(239, 53, 239);
+		margin-left: auto;
+	}
+	.burger:hover {
+		background: linear-gradient(123deg, violet, white);
+	}
+	.hide {
+		display: none;
+	}
+	.show {
+		display: flex;
+	}
+	div.techs {
+		flex-wrap: wrap;
 	}
 }

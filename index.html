@@ -11,8 +11,8 @@
 			rel="stylesheet"
 		/>
 	</head>
-	<body>
-		<header id="welcome-section" class="title flex">
+	<body class="darkmodable">
+		<header id="welcome-section " class="title wrapper">
 			<h1 class="title">M Yafizham's Resume</h1>
 			<div class="flex">
 				<a href="" class="">
@@ -21,17 +21,15 @@
 					</i>
 				</a>
 				<a href="">
-					<i class="fui-linkedin small"> <p>linkedIn</p></i>
-				</a>
-				<a href="">
-					<i class="fui-facebook small"> <p>facebook</p> </i>
-				</a>
-				<a href="">
-					<i class="fui-youtube small"> <p>Youtube</p> </i>
+					<i class="fui-linkedin small"> <p>linkedIn</p></i> </a
+				><a href="">
+					<i class="fui-facebook small"> <p>facebook</p></i> </a
+				><a href="">
+					<i class="fui-youtube small"> <p>youtube</p></i>
 				</a>
 			</div>
 		</header>
-		<div class="flex">
+		<div class="flex darkmodable">
 			<div class="menu">
 				<div class="menu-sub transition">
 					<button
@@ -43,63 +41,74 @@
 					<button class="menu-button personalbtn" onclick="personalActive()">
 						Personal
 					</button>
+					<button class="menu-button darkmodable" onclick="theme()">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="40"
+							height="40"
+							fill="currentColor"
+							class="bi bi-lightbulb"
+							viewBox="0 0 16 16"
+						>
+							<path
+								d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13a.5.5 0 0 1 0 1 .5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1 0-1 .5.5 0 0 1 0-1 .5.5 0 0 1-.46-.302l-.761-1.77a2 2 0 0 0-.453-.618A5.98 5.98 0 0 1 2 6m6-5a5 5 0 0 0-3.479 8.592c.263.254.514.564.676.941L5.83 12h4.342l.632-1.467c.162-.377.413-.687.676-.941A5 5 0 0 0 8 1"
+							/>
+						</svg>
+					</button>
 				</div>
 			</div>
 
-			<!-- root or target -->
+			<!-- render here -->
 			<div id="root"></div>
 
-			<content class="project">
-				<p class="dashed paddingx rounded">
-					I have learn a lot of things in web development.
-				</p>
-				<div class="skills flex scroll">
-					<!-- render skills -->
-				</div>
-				<div class="project-tile">
-					<div class="project">
-						<div class="infos flex col">
-							<h1 class="project-title">Ingredients Browser App</h1>
-							<div class="title">
-								<span class="tech dashed">React</span>
-								<span class="tech dashed">vite</span>
-								<span class="tech dashed">javascript</span>
-								<span class="tech dashed">tailwind</span>
-								<span class="tech dashed">jsx</span>
-							</div>
-						</div>
-						<a
-							href="https://ingredientsbrowser.vercel.app/"
-							target="_blank"
-							class="image"
-						>
-							<img
-								src="https://ucarecdn.com/fd070022-8a5a-4518-a532-cbc4181886d2/ssfoodingredients.jpeg"
-								class="w-screen rounded"
-							/>
-							<div class="bold absolute flex gap">
-								<p class="paddingx bigger bg-slate gap">
-									<i class="fui-eye paddingx"></i>
-									<i
-										class="fui-github paddingx"
-										onclick="window.open('https://github.com/ham144')"
-									></i>
-								</p>
-							</div>
-						</a>
-					</div>
-				</div>
-			</content>
+			<div>
+				<button class="menuhide" onclick="showMenu()">
+					<div class="burger"></div>
+					<div class="burger"></div>
+					<div class="burger"></div>
+				</button>
+			</div>
 		</div>
 	</body>
 
 	<script>
-		const skillsClass = document.querySelector(".skills");
+		let currentPage = "project";
+		//pembuatan localstorage darkmode
+		if (localStorage.getItem("darkmode")) {
+			isDarkmode = localStorage.getItem("darkmode");
+		} else {
+			localStorage.setItem("darkmode", false);
+		}
+		//pembuatan localstorage lastPage
+		if (localStorage.getItem("lastPage")) {
+			currentPage = localStorage.getItem("lastPage");
+		} else {
+			localStorage.setItem("lastPage", "project");
+		}
+
 		const root = document.querySelector("#root");
+		const menuSub = document.querySelector(".menu-sub");
 		const personalbtn = document.querySelector(".personalbtn");
 		const projectbtn = document.querySelector(".projectbtn");
+		const menu = document.querySelector(".menuhide");
 		let ispersonal = false;
 		const skillBar = document.querySelector(".skills");
+		const darkmodableItems = document.querySelectorAll(".darkmodable");
+
+		function theme() {
+			if (localStorage.getItem("darkmode") == "true") {
+				localStorage.setItem("darkmode", false);
+				darkmodableItems.forEach((node) => {
+					node.classList.add("light-mode");
+				});
+			} else {
+				localStorage.setItem("darkmode", true);
+				darkmodableItems.forEach((node) => {
+					node.classList.remove("light-mode");
+				});
+			}
+		}
+
 		const skills = [
 			{ React: 3 },
 			{ mongoose: 3 },
@@ -146,37 +155,161 @@
 				tech: ["react", "vite", "javascript", "tailwind", "jsx"],
 				urlRepo: "",
 			},
+			{
+				title: "Ingredients Browser App 2",
+				image:
+					"https://ucarecdn.com/fd070022-8a5a-4518-a532-cbc4181886d2/ssfoodingredients.jpeg",
+				urlVisit: "https://ingredientsbrowser.vercel.app/",
+				tech: ["react", "vite", "javascript", "tailwind", "jsx"],
+				urlRepo: "",
+			},
+			{
+				title: "Ingredients Browser App 3",
+				image:
+					"https://ucarecdn.com/fd070022-8a5a-4518-a532-cbc4181886d2/ssfoodingredients.jpeg",
+				urlVisit: "https://ingredientsbrowser.vercel.app/",
+				tech: [
+					"react",
+					"vite",
+					"javascript",
+					"tailwind",
+					"jsx",
+					"vite",
+					"javascript",
+					"tailwind",
+					"jsx",
+				],
+				urlRepo: "",
+			},
 		];
-
-		function createSkills() {
-			const star = `<i class="fui-star small"></i>`;
-
-			skills.forEach((skill) => {
-				skillsClass.innerHTML += `
-		  <div class="height20">
-		    <div class="flex">
-		              ${star.repeat(Object.values(skill)[0])}
-		    </div>
-		    <p class="col">${Object.keys(skill)[0]}</p>
-		  </div>
-		`;
-			});
-		}
 
 		function personalActive() {
 			personalbtn.classList.add("onActive");
-			// show personal
-
 			projectbtn.classList.remove("onActive");
+			menuSub.classList.toggle("show");
+			// show personal
+			initiatePersonal();
+
+			//localstorage
+			localStorage.setItem("lastPage", "personal");
+			currentPage = localStorage.getItem("lastPage");
 		}
 
 		function projectActive() {
 			projectbtn.classList.add("onActive");
-			//show project
-
 			personalbtn.classList.remove("onActive");
+			menuSub.classList.toggle("show");
+			//show project
+			initiateProject();
+
+			//localstorage
+			localStorage.setItem("lastPage", "project");
+			currentPage = localStorage.getItem("lastPage");
 		}
 
-		createSkills();
+		function showMenu() {
+			menuSub.classList.toggle("show");
+		}
+
+		function createProject() {
+			const projectTile = document.querySelector(".project-tile"); //taruh didalem biar ga kecepatan
+			let html = ""; //jangan const const syg
+
+			projects.forEach((project) => {
+				projectTile.innerHTML += `<div class="project">
+						<div class="infos flex col">
+							<h1 class="project-title">Ingredients Browser App</h1>
+							<div class="techs">
+								${project.tech
+									.map((tch) => {
+										return `<span class="tech dashed">${tch}</span>`;
+									})
+									.join(" - - ")}
+							</div>
+						</div>
+						<a
+							href="https://ingredientsbrowser.vercel.app/"
+							target="_blank"
+							class="image"
+						>
+							<img
+								src="https://ucarecdn.com/fd070022-8a5a-4518-a532-cbc4181886d2/ssfoodingredients.jpeg"
+								class="w-screen rounded"
+							/>
+							<div class="bold absolute flex gap">
+								<p class="paddingx bigger bg-slate gap">
+									<i class="fui-eye paddingx"></i>
+									<i
+										class="fui-github paddingx"
+										onclick="window.open('https://github.com/ham144')"
+									></i>
+								</p>
+							</div>
+						</a>
+					</div>`;
+			});
+		}
+
+		//called from projectActive function
+		function initiateProject() {
+			const html = `
+
+			<content class="project">
+				<p class="dashed paddingx rounded">
+					I have learn a lot of things in web development.
+				</p>
+				<div class="skills flex scroll">
+
+				</div>
+				<div class="project-tile">
+
+				</div>
+			</content>
+			`;
+
+			//skills iteration
+			root.innerHTML = html;
+			const star = `<i class="fui-star small"></i>`;
+			const skillsClass = document.querySelector(".skills");
+
+			skills.forEach((skill) => {
+				skillsClass.innerHTML += `
+				<div class="height20">
+					<div class="flex">
+						${star.repeat(Object.values(skill)[0])}
+						</div>
+						<p class="col">${Object.keys(skill)[0]}</p>
+						</div>
+						`;
+			});
+			//iterate projects
+			createProject();
+			// createSkills();
+		}
+
+		//called from personalActive function
+		function initiatePersonal() {
+			root.innerHTML = `
+			<h1>personal</h1>
+			`;
+		}
+
+		function main() {
+			//opening web for the 1st time
+			if (currentPage == "project") {
+				projectActive();
+			} else if (currentPage == "personal") {
+				personalActive();
+			}
+
+			if (localStorage.getItem("darkmode") == "false") {
+				darkmodableItems.forEach((item) => {
+					item.classList.add("light-mode");
+				});
+			}
+			//untuk menyembunyikan menu scree mobile
+			showMenu();
+		}
+		main();
 	</script>
 </html>
