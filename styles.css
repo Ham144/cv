@@ -214,6 +214,114 @@ a i {
 	color: whitesmoke;
 }
 
+/* Personal css */
+.personal {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: #52435e;
+	gap: 30px;
+	height: 800px;
+}
+
+.personal,
+.light-mode {
+	background: #000;
+}
+
+.intro {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 30px;
+}
+
+.overflowhorizontal {
+	display: flex;
+	overflow-x: scroll;
+	width: 800px;
+	height: 200px;
+	text-align: center;
+	gap: 20px;
+	overflow-x: scroll;
+}
+.card {
+	display: flex;
+	align-self: flex-end;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	height: 80%;
+	width: 200px;
+	background-color: slategrey;
+	filter: blur(2px);
+	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+	border-radius: 40px;
+}
+
+.skill-icon {
+	display: flex;
+	flex-direction: column;
+	align-self: flex-start;
+	font-size: 3rem;
+	cursor: pointer;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	height: 400px;
+	overflow-y: scroll;
+	gap: 20px 0;
+	width: 200px;
+}
+
+.skill-icon::-webkit-scrollbar {
+	width: 2px;
+	/* make the webkit scroll bar red color */
+	background-color: red;
+}
+
+.personal {
+	border-radius: 0px 20px 0px 0px;
+	background: linear-gradient(90deg, #050505 80%, #351515);
+	align-self: flex-start;
+}
+
+.red {
+	color: rgba(225, 177, 177, 0.925);
+}
+
+.description {
+	display: flex;
+	flex-direction: column;
+	align-self: flex-start;
+	align-items: center;
+	width: 70%;
+	/* filter: blur(10px); */
+	color: rgb(198, 167, 167);
+	font-family: cursive;
+}
+
+.button-download {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 12px 30px;
+	background: linear-gradient(23deg, #b511de, #9b3a3a);
+	position: fixed;
+	bottom: 12px;
+	border-radius: 20px;
+	font: 500;
+	cursor: pointer;
+}
+.button-download:hover {
+	background: linear-gradient(23deg, #9b3a3a, #b511de);
+	border: 2px dashed white;
+}
+.text-white {
+	color: white;
+}
+
+/* Personal css */
+
 /* these for Mobile */
 @media screen and (max-width: 500px) {
 	body {

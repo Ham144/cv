@@ -59,7 +59,60 @@
 			</div>
 
 			<!-- render here -->
-			<div id="root"></div>
+			<div id="root">
+				<div class="personal">
+					<div class="personal-title dashed paddingx rounded">
+						Junior Full-Stack Developer
+					</div>
+					<div class="intro">
+						<div class="description">
+							<div class="red">
+								I am a junior Full-Stack Developer passionate about Front-end,
+								Back-end, and Mobile Development. While I prefer Back-end
+								development the most, I started with Front-end development,
+								which remains my strongest skill. I love everything about coding
+								and often find myself drawn to learning new technologies, even
+								those outside my current stack. Unfortunately, I have to hold
+								back my desire to explore areas like Python, Laravel, Go,
+								SpringBoot, AI, Cybersecurity, Angular, Swift, and many more. I
+								need to focus on one stack until I land my first job. However,
+								once I secure a job and have the financial means, I plan to
+								learn the technologies I am interested in, purely for the love
+								of learning, not for monetary gain.
+							</div>
+							<div class="overflowhorizontal">
+								<div class="card">pppppp</div>
+								<div class="card">pppppp</div>
+								<div class="card">pppppp</div>
+								<div class="card">pppppp</div>
+								<div class="card">pppppp</div>
+								<div class="card">pppppp</div>
+								<div class="card">pppppp</div>
+							</div>
+						</div>
+						<div class="skill-icon">
+							<h3>Skills</h3>
+							<p>pedro</p>
+							<p>pedro</p>
+							<p>pedro</p>
+							<p>pedro</p>
+							<p>pedro</p>
+							<p>pedro</p>
+							<p>pedro</p>
+							<p>pedro</p>
+							<p>pedro</p>
+						</div>
+					</div>
+					<div class="button-download">
+						<a
+							class="text-white"
+							href="https://drive.usercontent.google.com/u/0/uc?id=1lfTcKHmGnApPWyuLt9SO_zZ0buBkyhS8&export=download"
+							download="true"
+							>Download My ATS CV</a
+						>
+					</div>
+				</div>
+			</div>
 
 			<div>
 				<button class="menuhide" onclick="showMenu()">
@@ -128,19 +181,19 @@
 			{ PostgreSql: 2 },
 			{ html: 3 },
 			{ javascript: 3 },
-			{ git: 3 },
-			{ vscode: 3 },
-			{ bootsrap: 1 },
-			{ jsx: 3 },
-			{ "npm/yarn": 1 },
-			{ "CRUD API": 3 },
-			{ bun: 1 },
-			{ vercel: 3 },
-			{ figma: 2 },
-			{ "microsoft Excel": 2 },
-			{ Flutter: 1 },
-			{ Dart: 1 },
-			{ Photoshop: 2 },
+			// { git: 3 },
+			// { vscode: 3 },
+			// { bootsrap: 1 },
+			// { jsx: 3 },
+			// { "npm/yarn": 1 },
+			// { "CRUD API": 3 },
+			// { bun: 1 },
+			// { vercel: 3 },
+			// { figma: 2 },
+			// { "microsoft Excel": 2 },
+			// { Flutter: 1 },
+			// { Dart: 1 },
+			// { Photoshop: 2 },
 		];
 
 		//personal
@@ -188,7 +241,7 @@
 			projectbtn.classList.remove("onActive");
 			menuSub.classList.toggle("show");
 			// show personal
-			initiatePersonal();
+			// initiatePersonal();
 
 			//localstorage
 			localStorage.setItem("lastPage", "personal");
@@ -197,6 +250,7 @@
 
 		function projectActive() {
 			projectbtn.classList.add("onActive");
+
 			personalbtn.classList.remove("onActive");
 			menuSub.classList.toggle("show");
 			//show project
@@ -290,7 +344,7 @@
 		//called from personalActive function
 		function initiatePersonal() {
 			root.innerHTML = `
-			<h1>personal</h1>
+
 			`;
 		}
 
