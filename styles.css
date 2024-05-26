@@ -201,6 +201,10 @@ a i {
 	transition: all linear 2000s;
 }
 
+.hoverPurple:hover {
+	color: rgb(39, 73, 135);
+}
+
 /* default is darkmode, add this class to each  item darkmodable */
 .light-mode {
 	color: black;
@@ -238,13 +242,38 @@ a i {
 }
 
 .overflowhorizontal {
+	margin-top: 40px;
 	display: flex;
-	overflow-x: scroll;
-	width: 800px;
-	height: 200px;
-	text-align: center;
+	overflow-x: visible;
+	align-self: flex-start;
+	height: 180px;
+	overflow-y: scroll;
+	padding-right: 40px;
 	gap: 20px;
-	overflow-x: scroll;
+}
+
+.overflowhorizontal::-webkit-scrollbar {
+	width: 3px;
+}
+
+.overflowhorizontal p {
+	text-align: center;
+	text-wrap: nowrap;
+	z-index: 2;
+}
+
+.colnew {
+	display: flex;
+	flex-direction: column;
+	transform: translateX(12px);
+}
+a.card {
+	color: white;
+}
+
+.left {
+	display: flex;
+	align-self: flex-start;
 }
 .card {
 	display: flex;
@@ -253,11 +282,14 @@ a i {
 	align-items: center;
 	text-align: center;
 	height: 80%;
-	width: 200px;
+	width: 100%;
 	background-color: slategrey;
 	filter: blur(2px);
 	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 	border-radius: 40px;
+	text-wrap: nowrap;
+	padding-right: 3px;
+	padding-left: 3px;
 }
 
 .skill-icon {
@@ -289,6 +321,10 @@ a i {
 	color: rgba(225, 177, 177, 0.925);
 }
 
+.gapsmall {
+	gap: 3px;
+}
+
 .description {
 	display: flex;
 	flex-direction: column;
@@ -297,9 +333,22 @@ a i {
 	width: 70%;
 	/* filter: blur(10px); */
 	color: rgb(198, 167, 167);
+	column-gap: 130px;
 	font-family: cursive;
 }
+.certificates {
+	display: flex;
+	flex-direction: column;
+	margin-top: 20px;
+	align-items: center;
+	row-gap: 30px;
+	text-align: center;
+}
 
+.sub {
+	display: flex;
+	justify-content: center;
+}
 .button-download {
 	display: flex;
 	justify-content: center;
@@ -318,6 +367,9 @@ a i {
 }
 .text-white {
 	color: white;
+}
+.uppercase {
+	text-transform: uppercase;
 }
 
 /* Personal css */
@@ -416,5 +468,44 @@ a i {
 	}
 	div.techs {
 		flex-wrap: wrap;
+	}
+
+	/* Personal on mobile */
+	div.flex.gap {
+		display: flex;
+		flex-direction: column-reverse;
+		justify-content: center;
+		align-items: center;
+		margin-top: 300px;
+	}
+	div.personal {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 30px;
+	}
+	div.flex {
+		display: flex;
+	}
+	div.red {
+		font-size: medium;
+		text-wrap: wrap;
+		align-items: center;
+		color: white;
+		width: 400px;
+		padding-left: 20px;
+	}
+	.intro {
+		display: flex;
+		flex-direction: column-reverse;
+	}
+	.description {
+		display: flex;
+		flex-direction: column;
+	}
+	div.flex.mobile {
+		display: flex;
+		flex-direction: column-reverse;
 	}
 }

@@ -15,15 +15,22 @@
 		<header id="welcome-section " class="title wrapper">
 			<h1 class="title">M Yafizham's Resume</h1>
 			<div class="flex">
-				<a href="" class="">
-					<i class="fui-github small">
+				<a
+					href="https://github.com/Ham144/"
+					class="hoverPurple"
+					target="_blank"
+				>
+					<i class="fui-github small hoverPurple">
 						<p>github</p>
 					</i>
 				</a>
-				<a href="">
-					<i class="fui-linkedin small"> <p>linkedIn</p></i> </a
+				<a
+					href="https://www.linkedin.com/search/results/all/?keywords=Yafiz%20(Batubara)%20ham&origin=GLOBAL_SEARCH_HEADER&sid=j2L"
+					target="_blank"
+				>
+					<i class="fui-linkedin small hoverPurple"> <p>linkedIn</p></i> </a
 				><a href="">
-					<i class="fui-facebook small"> <p>facebook</p></i> </a
+					<i class="fui-facebook small hoverPurple"> <p>facebook</p></i> </a
 				><a href="">
 					<i class="fui-youtube small"> <p>youtube</p></i>
 				</a>
@@ -59,60 +66,7 @@
 			</div>
 
 			<!-- render here -->
-			<div id="root">
-				<div class="personal">
-					<div class="personal-title dashed paddingx rounded">
-						Junior Full-Stack Developer
-					</div>
-					<div class="intro">
-						<div class="description">
-							<div class="red">
-								I am a junior Full-Stack Developer passionate about Front-end,
-								Back-end, and Mobile Development. While I prefer Back-end
-								development the most, I started with Front-end development,
-								which remains my strongest skill. I love everything about coding
-								and often find myself drawn to learning new technologies, even
-								those outside my current stack. Unfortunately, I have to hold
-								back my desire to explore areas like Python, Laravel, Go,
-								SpringBoot, AI, Cybersecurity, Angular, Swift, and many more. I
-								need to focus on one stack until I land my first job. However,
-								once I secure a job and have the financial means, I plan to
-								learn the technologies I am interested in, purely for the love
-								of learning, not for monetary gain.
-							</div>
-							<div class="overflowhorizontal">
-								<div class="card">pppppp</div>
-								<div class="card">pppppp</div>
-								<div class="card">pppppp</div>
-								<div class="card">pppppp</div>
-								<div class="card">pppppp</div>
-								<div class="card">pppppp</div>
-								<div class="card">pppppp</div>
-							</div>
-						</div>
-						<div class="skill-icon">
-							<h3>Skills</h3>
-							<p>pedro</p>
-							<p>pedro</p>
-							<p>pedro</p>
-							<p>pedro</p>
-							<p>pedro</p>
-							<p>pedro</p>
-							<p>pedro</p>
-							<p>pedro</p>
-							<p>pedro</p>
-						</div>
-					</div>
-					<div class="button-download">
-						<a
-							class="text-white"
-							href="https://drive.usercontent.google.com/u/0/uc?id=1lfTcKHmGnApPWyuLt9SO_zZ0buBkyhS8&export=download"
-							download="true"
-							>Download My ATS CV</a
-						>
-					</div>
-				</div>
-			</div>
+			<div id="root"></div>
 
 			<div>
 				<button class="menuhide" onclick="showMenu()">
@@ -171,33 +125,29 @@
 			{ mongodb: 3 },
 			{ AWS: 1 },
 			{ Docker: 1 },
+			{ javascript: 3 },
 			{ "React-quary": 2 },
 			{ JAVA: 2 },
-			{ Typescript: 2 },
+			{ Typescript: 3 },
 			{ Expressjs: 1 },
 			{ nextauth: 2 },
 			{ css: 3 },
 			{ tailwind: 3 },
 			{ PostgreSql: 2 },
 			{ html: 3 },
-			{ javascript: 3 },
-			// { git: 3 },
-			// { vscode: 3 },
-			// { bootsrap: 1 },
-			// { jsx: 3 },
-			// { "npm/yarn": 1 },
-			// { "CRUD API": 3 },
-			// { bun: 1 },
-			// { vercel: 3 },
-			// { figma: 2 },
-			// { "microsoft Excel": 2 },
-			// { Flutter: 1 },
-			// { Dart: 1 },
-			// { Photoshop: 2 },
+			{ "React Native": 1 },
+			{ git: 3 },
+			{ vscode: 3 },
+			{ bootsrap: 1 },
+			{ jsx: 3 },
+			{ "npm/yarn/bun": 1 },
+			{ "CRUD API": 3 },
+			{ vercel: 3 },
+			{ figma: 2 },
+			{ "microsoft Excel": 3 },
+			{ "microsoft Word": 3 },
+			{ Photoshop: 2 },
 		];
-
-		//personal
-		const languages = ["Indonesian", "English A1", "Japanese"];
 
 		const projects = [
 			{
@@ -241,7 +191,7 @@
 			projectbtn.classList.remove("onActive");
 			menuSub.classList.toggle("show");
 			// show personal
-			// initiatePersonal();
+			initiatePersonal();
 
 			//localstorage
 			localStorage.setItem("lastPage", "personal");
@@ -329,7 +279,7 @@
 			skills.forEach((skill) => {
 				skillsClass.innerHTML += `
 				<div class="height20">
-					<div class="flex">
+					<div class="flex ">
 						${star.repeat(Object.values(skill)[0])}
 						</div>
 						<p class="col">${Object.keys(skill)[0]}</p>
@@ -341,11 +291,143 @@
 			// createSkills();
 		}
 
+		function generateSkills() {
+			const skillsonPersonal = document.querySelector(".skillsonPersonal");
+			//assign skill to personal page
+			skills.forEach((skill) => {
+				skillsonPersonal.innerHTML += `
+			<div class="flex">
+				<p class="uppercase">${Object.keys(skill)[0]}</p>
+				<p class="paddingx">${Object.values(skill)[0] > 2 ? "Cool" : ""}</p>
+			</div>
+			`;
+			});
+		}
+
 		//called from personalActive function
 		function initiatePersonal() {
 			root.innerHTML = `
+				<div class="personal">
+					<div class="flex gap">
+						<div class="personal-title dashed paddingx rounded">
+							Junior Full-Stack Developer
+						</div>
+						<div class="personal-title dashed paddingx rounded">
+							Front-end Developer
+						</div>
+						<div class="personal-title dashed paddingx rounded">
+							Mobile-Developer
+						</div>
+					</div>
+					<div class="intro">
+						<div class="description">
+							<div class="flex">
+								<div class="red">
+									I am a junior Full-Stack Developer passionate about Front-end,
+									Back-end, and Mobile Development. While I prefer Back-end
+									development the most, I started with Front-end development,
+									which remains my strongest skill. I love everything about
+									coding and often find myself drawn to learning new
+									technologies, even those outside my current stack.
+									Unfortunately, I have to hold back my desire to explore areas
+									like Python, Laravel, Go, SpringBoot, AI, Cybersecurity,
+									Angular, Swift, and many more. I need to focus on one stack
+									until I land my first job. However, once I secure a job and
+									have the financial means, I plan to learn the technologies I
+									am interested in, purely for the love of learning, not for
+									monetary gain.
+								</div>
+								<img
+									src="https://media.licdn.com/dms/image/C5603AQFcNDNkPTRE1w/profile-displayphoto-shrink_800_800/0/1638353608847?e=1722470400&v=beta&t=9ZteftTmBPIWGW4kM1otYwKmCE9fW4VUa2VZamqJOZM"
+									alt=""
+									width="200"
+									height="200"
+									class="rounded"
+								/>
+							</div>
 
+							<div class="overflowhorizontal">
+								<div class="colnew left gapsmall">
+									<p>languages i can speak</p>
+									<div class="card">English</div>
+									<div class="card">Indonesian</div>
+									<div class="card">Japanese</div>
+								</div>
+								<div class="colnew left gapsmall">
+									<p>My Links</p>
+									<a
+										href="mailto:24434muhammad.yafizham@gmail.com"
+										class="card"
+										target="_blank"
+										>24434muhammad.yafizham@gmail.com</a
+									>
+									<a href="tel:+6283854026650" class="card" target="_blank"
+										>+62 838 5402 6650</a
+									>
+									<a
+										href="https://github.com/Ham144/"
+										class="card"
+										target="_blank"
+										>https://github.com/Ham144/</a
+									>
+									<a
+										href="https://www.linkedin.com/search/results/all/?keywords=Yafiz%20(Batubara)%20ham&origin=GLOBAL_SEARCH_HEADER&sid=j2L"
+										class="card"
+										target="_blank"
+										>www.linkedin.com/in/yafiz-ham-b589051a9</a
+									>
+								</div>
+								<!-- <div class="colnew left gapsmall">
+									<p>Address</p>
+									<div class="card">Medan city, North Sumatra, Indonesia</div>
+									<div class="card">North Sumatra</div>
+									<div class="card">Indonesia</div>
+								</div> -->
+								<div class="colnew left gapsmall">
+									<p>Soft skills</p>
+									<div class="card">Collaboration</div>
+									<div class="card">Patience</div>
+									<div class="card">Debugging</div>
+									<div class="card">Japanese</div>
+									<div class="card">Sincere</div>
+								</div>
+								<div class="colnew left gapsmall">
+									<p>Software Skill</p>
+									<div class="card">Word</div>
+									<div class="card">Microsot Excel</div>
+									<div class="card">Figma</div>
+									<div class="card">Photoshop</div>
+									<div class="card">Powerpoint</div>
+									<div class="card">Postman</div>
+									<div class="card">Chrome</div>
+									<div class="card">VsCode, Sublime</div>
+								</div>
+							</div>
+							<div class="certificates">
+								<p>Certificates</p>
+								<div class="sub">
+									<!-- certifiates here -->
+								</div>
+							</div>
+						</div>
+						<div class="rightside">
+							<div class="skill-icon">
+								<h3>Skills</h3>
+								<div class="skillsonPersonal"></div>
+							</div>
+						</div>
+					</div>
+					<div class="button-download">
+						<a
+							class="text-white"
+							href="https://drive.usercontent.google.com/u/0/uc?id=1lfTcKHmGnApPWyuLt9SO_zZ0buBkyhS8&export=download"
+							download="true"
+							>Download My ATS CV</a
+						>
+					</div>
+				</div>
 			`;
+			generateSkills();
 		}
 
 		function main() {
