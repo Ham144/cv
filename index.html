@@ -121,7 +121,7 @@
 			{ mongoose: 3 },
 			{ vite: 3 },
 			{ Nextjs: 3 },
-			{ Redux: 2 },
+			{ Redux: 3 },
 			{ mongodb: 3 },
 			{ AWS: 1 },
 			{ Docker: 1 },
@@ -129,8 +129,8 @@
 			{ "React-quary": 2 },
 			{ JAVA: 2 },
 			{ Typescript: 3 },
-			{ Expressjs: 1 },
-			{ nextauth: 2 },
+			{ Expressjs: 3 },
+			{ nextauth: 3 },
 			{ css: 3 },
 			{ tailwind: 3 },
 			{ PostgreSql: 2 },
@@ -156,33 +156,55 @@
 					"https://ucarecdn.com/fd070022-8a5a-4518-a532-cbc4181886d2/ssfoodingredients.jpeg",
 				urlVisit: "https://ingredientsbrowser.vercel.app/",
 				tech: ["react", "vite", "javascript", "tailwind", "jsx"],
-				urlRepo: "",
+				urlRepo: "https://github.com/Ham144/RecipeApp",
 			},
 			{
-				title: "Ingredients Browser App 2",
+				title: "Bank Cool FE",
 				image:
-					"https://ucarecdn.com/fd070022-8a5a-4518-a532-cbc4181886d2/ssfoodingredients.jpeg",
-				urlVisit: "https://ingredientsbrowser.vercel.app/",
+					"https://ucarecdn.com/c2da573c-b9b5-4383-b94b-82cdab1b2fc2/bankapp.PNG",
+				urlVisit: "https://bank-app-reactjs-and-tailwind.vercel.app/",
 				tech: ["react", "vite", "javascript", "tailwind", "jsx"],
-				urlRepo: "",
+				urlRepo: "https://github.com/Ham144/Bank-App-Reactjs-and-Tailwind",
 			},
 			{
-				title: "Ingredients Browser App 3",
+				title: "Nike Fake FE",
 				image:
-					"https://ucarecdn.com/fd070022-8a5a-4518-a532-cbc4181886d2/ssfoodingredients.jpeg",
-				urlVisit: "https://ingredientsbrowser.vercel.app/",
+					"https://ucarecdn.com/9b4d0dfd-e64f-4366-aa40-62a21dca9ed5/nike.PNG",
+				urlVisit: "https://nike-landing-page-joking.vercel.app/",
+				tech: ["react", "vite", "javascript", "tailwind", "jsx"],
+				urlRepo: "https://github.com/Ham144/Nike-landing-page",
+			},
+			{
+				title: "Fullstack Nasi Goreng Sell",
+				image:
+					"https://ucarecdn.com/ddc9ee15-47b7-4fe5-a1ff-639a5dc2a7b5/aaa.PNG",
+				urlVisit: "",
 				tech: [
 					"react",
-					"vite",
-					"javascript",
-					"tailwind",
-					"jsx",
-					"vite",
+					"daisyui",
+					"authjs",
+					"nextjs",
 					"javascript",
 					"tailwind",
 					"jsx",
 				],
 				urlRepo: "",
+			},
+			{
+				title: "Nobias Forecasting App",
+				image:
+					"https://ucarecdn.com/a18bbb47-3029-4bb2-9c8c-d7da9e0766e7/f768eb7ca80841a997e7d61d3630d429.png",
+				urlVisit: "https://nobias-alpha.vercel.app/",
+				tech: ["react", "nextjs", "Typescript", "tailwind", "jsx"],
+				urlRepo: "https://github.com/Ham144/nobias",
+			},
+			{
+				title: "Practicing React 25 small features",
+				image:
+					"https://ucarecdn.com/f69c6690-3bca-46e6-867e-9d9a00ef6203/practicereact.PNG",
+				urlVisit: "https://25-features-react-practice.vercel.app/",
+				tech: ["react", "javascript", "jsx"],
+				urlRepo: "https://github.com/Ham144/25-features-React-Practice",
 			},
 		];
 
@@ -222,7 +244,7 @@
 			projects.forEach((project) => {
 				projectTile.innerHTML += `<div class="project">
 						<div class="infos flex col">
-							<h1 class="project-title">Ingredients Browser App</h1>
+							<h1 class="project-title">${project.title}</h1>
 							<div class="techs">
 								${project.tech
 									.map((tch) => {
@@ -232,12 +254,12 @@
 							</div>
 						</div>
 						<a
-							href="https://ingredientsbrowser.vercel.app/"
+							href=${project.urlVisit}
 							target="_blank"
 							class="image"
 						>
 							<img
-								src="https://ucarecdn.com/fd070022-8a5a-4518-a532-cbc4181886d2/ssfoodingredients.jpeg"
+								src=${project.image}
 								class="w-screen rounded"
 							/>
 							<div class="bold absolute flex gap">
@@ -245,7 +267,7 @@
 									<i class="fui-eye paddingx"></i>
 									<i
 										class="fui-github paddingx"
-										onclick="window.open('https://github.com/ham144')"
+										onclick="window.open('${project.urlRepo}')"
 									></i>
 								</p>
 							</div>
@@ -348,7 +370,7 @@
 
 							<div class="overflowhorizontal">
 								<div class="colnew left gapsmall">
-									<p>languages i can speak</p>
+									<p>Can talk with</p>
 									<div class="card">English</div>
 									<div class="card">Indonesian</div>
 									<div class="card">Japanese</div>
