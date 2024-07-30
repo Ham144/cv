@@ -128,14 +128,16 @@
 			{ javascript: 3 },
 			{ "React-quary": 2 },
 			{ JAVA: 2 },
-			{ Typescript: 3 },
+			{ Typescript: 2 },
 			{ Expressjs: 3 },
 			{ nextauth: 3 },
 			{ css: 3 },
 			{ tailwind: 3 },
 			{ PostgreSql: 2 },
 			{ html: 3 },
-			{ "React Native": 1 },
+			{ DaisyUi: 3 },
+			{ Stripe: 3 },
+			{ "React Native": 2 },
 			{ git: 3 },
 			{ vscode: 3 },
 			{ bootsrap: 1 },
@@ -262,8 +264,8 @@
 								src=${project.image}
 								class="w-screen rounded"
 							/>
-							<div class="bold absolute flex gap">
-								<p class="paddingx bigger bg-slate gap">
+							<div class=" bold absolute flex gap ">
+								<p class="konto paddingx bigger bg-slate gap ">
 									<i class="fui-eye paddingx"></i>
 									<i
 										class="fui-github paddingx"
@@ -330,7 +332,7 @@
 		function initiatePersonal() {
 			root.innerHTML = `
 				<div class="personal">
-					<div class="flex gap">
+					<div class="flex gap ">
 						<div class="personal-title dashed paddingx rounded">
 							Junior Full-Stack Developer
 						</div>
@@ -460,7 +462,7 @@
 				personalActive();
 			}
 
-			if (localStorage.getItem("darkmode") == "false") {
+			if (localStorage.getItem("darkmode") != "false") {
 				darkmodableItems.forEach((item) => {
 					item.classList.add("light-mode");
 				});

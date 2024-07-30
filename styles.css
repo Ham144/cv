@@ -7,7 +7,12 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	background: linear-gradient(67deg, black 30%, darkviolet, indianred);
+	background: linear-gradient(
+		67deg,
+		black 30%,
+		rgb(239, 64, 16),
+		rgb(151, 4, 159)
+	);
 }
 
 .title {
@@ -42,7 +47,7 @@ body {
 .tech {
 	width: 50px;
 	padding: 5px 14px;
-	background-color: darkviolet;
+	background-color: rgb(245, 75, 45);
 	border-radius: 20px;
 	font-size: 1rem;
 	z-index: 3;
@@ -379,6 +384,7 @@ a.card {
 	body {
 		overflow-x: visible;
 	}
+
 	h1.title {
 		font-size: x-large;
 	}
@@ -469,7 +475,9 @@ a.card {
 	div.techs {
 		flex-wrap: wrap;
 	}
-
+	.konto {
+		display: none;
+	}
 	/* Personal on mobile */
 	div.flex.gap {
 		display: flex;
@@ -483,6 +491,8 @@ a.card {
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
+		width: auto;
+		padding: 20px 20px;
 		gap: 30px;
 	}
 	div.flex {
