@@ -437,6 +437,7 @@ a.card {
 	}
 	.menu-button {
 		height: 90px;
+		z-index: 2;
 	}
 	.menuhide {
 		display: block;
@@ -479,21 +480,85 @@ a.card {
 		display: none;
 	}
 	/* Personal on mobile */
-	div.flex.gap {
-		display: flex;
-		flex-direction: column-reverse;
-		justify-content: center;
-		align-items: center;
-		margin-top: 300px;
+	.z-10 {
+		z-index: 30;
 	}
+
 	div.personal {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		width: auto;
-		padding: 20px 20px;
+		overflow: hidden;
 		gap: 30px;
+		margin: 0 auto;
+		height: fit-content;
+	}
+
+	.skill-icon {
+		width: 400px;
+	}
+
+	.intro {
+		display: flex;
+		flex-direction: column-reverse;
+
+		align-items: center;
+		margin: 0 auto;
+	}
+
+	.description-and-photo {
+		display: flex;
+		flex-direction: column-reverse;
+	}
+
+	div.red {
+		text-align: center;
+	}
+
+	.overflowhorizontal {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		height: auto;
+		width: auto;
+		overflow-y: visible;
+	}
+
+	.gapsmall div {
+		display: flex;
+		flex-direction: column;
+		margin: auto auto;
+		width: 70vw;
+		margin-top: 13px;
+		border: 2px solid white;
+		background: linear-gradient(50deg, #4a0404, rgb(125, 25, 125));
+	}
+
+	.mylinks-item {
+		border: 2px solid white;
+		background: linear-gradient(50deg, #4a0404, rgb(125, 25, 125));
+		margin-top: 13px;
+		width: 70vw;
+	}
+
+	.rightside {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: auto;
+		margin: 0 auto;
+	}
+	.sub-title {
+		display: flex;
+		flex-direction: column-reverse;
+		justify-content: center;
+		align-items: center;
+		margin-top: 3px;
+	}
+	.skill-icon {
+		display: hidden;
 	}
 	div.flex {
 		display: flex;
@@ -503,7 +568,6 @@ a.card {
 		text-wrap: wrap;
 		align-items: center;
 		color: white;
-		width: 400px;
 		padding-left: 20px;
 	}
 	.intro {

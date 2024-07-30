@@ -40,12 +40,15 @@
 			<div class="menu">
 				<div class="menu-sub transition">
 					<button
-						class="menu-button projectbtn onActive"
+						class="menu-button projectbtn onActive z-10"
 						onclick="projectActive()"
 					>
 						Projects
 					</button>
-					<button class="menu-button personalbtn" onclick="personalActive()">
+					<button
+						class="menu-button personalbtn z-10"
+						onclick="personalActive()"
+					>
 						Personal
 					</button>
 					<button class="menu-button darkmodable" onclick="theme()">
@@ -68,7 +71,7 @@
 			<!-- render here -->
 			<div id="root"></div>
 
-			<div>
+			<div class="">
 				<button class="menuhide" onclick="showMenu()">
 					<div class="burger"></div>
 					<div class="burger"></div>
@@ -320,7 +323,7 @@
 			//assign skill to personal page
 			skills.forEach((skill) => {
 				skillsonPersonal.innerHTML += `
-			<div class="flex">
+			<div class="techSkills flex ">
 				<p class="uppercase">${Object.keys(skill)[0]}</p>
 				<p class="paddingx">${Object.values(skill)[0] > 2 ? "Cool" : ""}</p>
 			</div>
@@ -331,8 +334,8 @@
 		//called from personalActive function
 		function initiatePersonal() {
 			root.innerHTML = `
-				<div class="personal">
-					<div class="flex gap ">
+				<div class="personal ">
+					<div class="flex gap sub-title">
 						<div class="personal-title dashed paddingx rounded">
 							Junior Full-Stack Developer
 						</div>
@@ -345,7 +348,7 @@
 					</div>
 					<div class="intro">
 						<div class="description">
-							<div class="flex">
+							<div class="description-and-photo flex ">
 								<div class="red">
 									I am a junior Full-Stack Developer passionate about Front-end,
 									Back-end, and Mobile Development. While I prefer Back-end
@@ -366,13 +369,13 @@
 									alt=""
 									width="200"
 									height="200"
-									class="rounded"
+									class="rounded profilePic"
 								/>
 							</div>
 
 							<div class="overflowhorizontal">
-								<div class="colnew left gapsmall">
-									<p>Can talk with</p>
+								<div class="colnew left gapsmall ">
+									<p>Comunications</p>
 									<div class="card">English</div>
 									<div class="card">Indonesian</div>
 									<div class="card">Japanese</div>
@@ -381,24 +384,24 @@
 									<p>My Links</p>
 									<a
 										href="mailto:24434muhammad.yafizham@gmail.com"
-										class="card"
+										class="card mylinks-item"
 										target="_blank"
-										>24434muhammad.yafizham@gmail.com</a
+										>Email</a
 									>
-									<a href="tel:+6283854026650" class="card" target="_blank"
-										>+62 838 5402 6650</a
+									<a href="tel:+6283854026650" class="card mylinks-item" target="_blank"
+										>Phone</a
 									>
 									<a
 										href="https://github.com/Ham144/"
-										class="card"
+										class="card mylinks-item"
 										target="_blank"
-										>https://github.com/Ham144/</a
+										>Github</a
 									>
 									<a
 										href="https://www.linkedin.com/search/results/all/?keywords=Yafiz%20(Batubara)%20ham&origin=GLOBAL_SEARCH_HEADER&sid=j2L"
-										class="card"
+										class="card mylinks-item"
 										target="_blank"
-										>www.linkedin.com/in/yafiz-ham-b589051a9</a
+										>LinkedIn</a
 									>
 								</div>
 								<!-- <div class="colnew left gapsmall">
