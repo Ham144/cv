@@ -376,6 +376,10 @@ a.card {
 .uppercase {
 	text-transform: uppercase;
 }
+.medsos-wrap {
+	display: flex;
+	gap: 10px;
+}
 
 /* Personal css */
 
@@ -581,5 +585,42 @@ a.card {
 	div.flex.mobile {
 		display: flex;
 		flex-direction: column-reverse;
+	}
+	.container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		overflow-x: hidden;
+		margin: auto;
+	}
+	.medsos-wrap {
+		display: none;
+		width: 5px;
+		font-size: large;
+		padding: 0%;
+	}
+	.project {
+		display: flex;
+		width: 300px;
+		margin: auto;
+	}
+	.paddingx {
+		padding: 12px;
+	}
+	.skills {
+		padding-left: 60px;
+	}
+	.height20 {
+		display: flex;
+		justify-content: center;
+		margin: auto;
+		font-size: small;
+		padding: 0;
+	}
+	.project-tile {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
 	}
 }
